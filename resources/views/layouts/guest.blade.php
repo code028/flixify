@@ -7,7 +7,7 @@
     <title>Theater</title>
     @vite('resources/css/app.css')
 </head>
-<body class="w-full h-screen flex justify-center items-center">
+<body class="w-full h-screen grid place-items-center">
     @yield('content')
 </body>
 </html>

@@ -7,16 +7,14 @@
     <title>Theater</title>
     @vite('resources/css/app.css')
 </head>
-<body class="w-full h-screen flex justify-center items-center">
-    <div>
-        U igri si mali
-    
-        <form action="{{ route('logout')}}" method="POST">
-            @csrf
-        <button type="submit" class="py-2 px-4 bg-red-500">
-            VAj ga du
-        </button>
-        </form>
+
+<body class="w-full h-screen relative">
+    <div class="w-full h-1/6 sticky top-0 left-0 bg-red-400 max-h-[80px] min-h-[80px]">
+        @include('components.navbar')
     </div>
+    <div class="w-full h-5/6 grid place-items-center">
+        Content
+    </div>
+</body>
 </body>
 </html>

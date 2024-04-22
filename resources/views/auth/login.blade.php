@@ -15,7 +15,7 @@
 		</div>
 		<div class="w-full flex flex-col justify-center">
 			<label for="login" class="px-4 py-2">Username</label>
-			<input type="text" name="login" required class="w-full py-2 px-5 border-b-2 border-black/15 outline-none rounded" placeholder="john.doe">
+			<input type="text" name="login" required class="w-full py-2 px-5 border-b-2 border-black/15 outline-none rounded" placeholder="john.smith">
 		</div>
 		<div class="w-full flex flex-col justify-center">
 			<label for="password" class="px-4 py-2">Password</label>

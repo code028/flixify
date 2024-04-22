@@ -24,7 +24,7 @@
 		</div>
 		<div class="w-full flex flex-col justify-center">
 			<label for="email" class="px-4 py-2">Email</label>
-			<input type="email" name="email" required class="w-full py-2 px-5 border-b-2 border-black/15 outline-none rounded" placeholder="john.doe@company.com">
+			<input type="email" name="email" required class="w-full py-2 px-5 border-b-2 border-black/15 outline-none rounded" placeholder="john.smith@company.com">
 		</div>
 		<div class="w-full flex flex-col justify-center">
 			<label for="password" class="px-4 py-2">Password</label>

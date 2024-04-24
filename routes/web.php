@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,8 +19,21 @@ Route::post('/register', [RegisterController::class,'register'])->name('register
 
 /* Only logged in users can access these */
 Route::middleware('auth')->group(function () {
-    
-    Route::get('/', [HomeController::class, 'index'])->name('index');
+
+    Route::get('/', [PageController::class, 'index'])->name('index');
+    Route::get('/service', [PageController::class, 'service'])->name('page.service');
+    Route::get('/contact', [PageController::class, 'contact'])->name('page.contact');
+    Route::get('/about', [PageController::class, 'about'])->name('page.about');
+    Route::get('/user/{id}', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/user/{id}/settings', [ProfileController::class, 'settings'])->name('settings');
+    Route::middleware('role:admin')->group(function () {
+        // Route::get('/admin/dashboard', [PageController::class, 'admin'])->name('dashboard');
+        Route::get('/admin/dashboard', function(){
+            return view('admin.dashboard');
+        })->name('dashboard');
+    });
+
+    Route::post('/user/theme', [ProfileController::class, 'theme'])->name('theme');
 
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });

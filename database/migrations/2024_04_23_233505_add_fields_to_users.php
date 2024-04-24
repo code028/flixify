@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('username')->unique(true)->nullable(false)->after('name');
             $table->enum('role', ['user', 'moderator', 'admin'])->nullable(false)->default('user');
+            $table->string('image')->unique(true)->nullable(true);
+            $table->enum('theme', ['true','false'])->default('false');
         });
     }
 
@@ -25,6 +27,8 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('username');
             $table->dropColumn('role');
+            $table->dropColumn('image');
+            $table->dropColumn('theme');
         });
     }
 };

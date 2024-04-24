@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('content')
-	<form  method="POST" action="{{route('login')}}" class="w-full mx-4 sm:mx-0 sm:w-1/2 md:w-1/2 lg:w-1/4 h-auto flex flex-col gap-y-3 justify-center items-center ">
+	<form  method="POST" action="{{route('login')}}" class="w-full px-3 mx-4 sm:mx-0 sm:w-1/2 md:w-1/2 lg:w-1/4 h-auto flex flex-col gap-y-3 justify-center items-center ">
 		@csrf
 		<div class="w-full flex justify-center">
 			<div class="w-full flex flex-col justify-center items-center ">
